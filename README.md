@@ -1,10 +1,10 @@
 # GitHubScore
 
-![](https://raw.githubusercontent.com/zats/github_score/master/README/screenshot.png)
+![](https://raw.githubusercontent.com/zats/github_bus_factor/master/README/screenshot.png)
 
 More meaningful statistics for GitHub projects than just stars.
 
-    $ gem install github_score
+    $ gem install github_bus_factor
 
 
 # Report
@@ -27,17 +27,17 @@ You will need to create a GitHub access token. Head over to https://github.com/s
 
 To fetch a report for a particular repository
 
-	$ github_score fetch octokit/octokit.rb
+	$ github_bus_factor fetch octokit/octokit.rb
 
 First time you call it, it will prompt you to provide the token you just created.
 
 To remove the token
 	
-	$ github_score logout
+	$ github_bus_factor logout
 
 If you ever forget what each line of the report means, run
 
-	$ github_score about
+	$ github_bus_factor about
 
 
 ## License

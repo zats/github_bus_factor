@@ -1,4 +1,4 @@
-require "github_score/version"
+require "github_bus_factor/version"
 #!/usr/bin/env ruby
 
 require 'rubygems'
@@ -14,7 +14,7 @@ include ActionView::Helpers::DateHelper
 
 
 module GitHubScore
-	KEYCHAIN_SERVICE = 'github_score'
+	KEYCHAIN_SERVICE = 'github_bus_factor'
 	API_CALL_RETRY_COUNT = 3
 
 
@@ -33,7 +33,7 @@ module GitHubScore
 
 
 	command :about do |c|
-		c.syntax = 'github_score about'
+		c.syntax = 'github_bus_factor about'
 		c.summary = 'Explains every line of the report.'
 		c.action do |args, options|
 			table = Terminal::Table.new do |t|
@@ -54,7 +54,7 @@ module GitHubScore
 	end
 
 	command :logout do |c|
-		c.syntax = 'github_score logout'
+		c.syntax = 'github_bus_factor logout'
 		c.summary = 'Remove GitHub token from your keychain.'
 		c.action do |args, options|
 			Security::GenericPassword.delete(service: KEYCHAIN_SERVICE)
@@ -62,7 +62,7 @@ module GitHubScore
 	end
 
 	command :fetch do |c|
-		c.syntax = 'github_score fetch [options]'
+		c.syntax = 'github_bus_factor fetch [options]'
 		c.summary = 'Fetches GitHub score for a given owner/repository'
 		c.option '--verbose', 'Add extra logging'
 		c.action do |args, options|

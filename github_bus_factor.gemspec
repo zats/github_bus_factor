@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'github_score/version'
+require 'github_bus_factor/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "github_score"
+  spec.name          = "github_bus_factor"
   spec.version       = GitHubScore::VERSION
   spec.authors       = ["Sash Zats"]
   spec.email         = ["sash@zats.io"]
