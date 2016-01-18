@@ -20,7 +20,7 @@ module GitHubBusFactor
 
 	program :version, '0.0.1'
 	program :description, 'More than just stars'
-	default_command :about
+	default_command :fetch
 
 	# There must be a better way to deal with GitHub caching… 
 	def GitHubBusFactor.helper(count, block)
