@@ -61,17 +61,6 @@ module GitHubScore
 		end
 	end
 
-	command :login do |c|
-		c.syntax = 'github_score login [token]'
-		c.summary = 'Stores GitHub token in your keychain.'
-		c.action do |args, options|
-			throw "Expect token as the only argument" unless args.count == 1
-			token = args.first
-			Security::GenericPassword.delete(service: KEYCHAIN_SERVICE) if Security::GenericPassword.find(service: KEYCHAIN_SERVICE) 
-			Security::GenericPassword.add(KEYCHAIN_SERVICE, '', token)
-		end
-	end
-
 	command :fetch do |c|
 		c.syntax = 'github_score fetch [options]'
 		c.summary = 'Fetches GitHub score for a given owner/repository'
@@ -86,8 +75,16 @@ module GitHubScore
 
 			# Token
 			tokenPassword = Security::GenericPassword.find(service: KEYCHAIN_SERVICE)
-			throw "Token is not set, please run `github_score login [token]` first" unless tokenPassword
-			token = tokenPassword.password
+			token = nil
+			unless tokenPassword
+				puts "Please create a GitHub access token at https://github.com/settings/tokens"
+				while token.nil? || token.empty? do
+					token = ask("Token: ")
+					Security::GenericPassword.add(KEYCHAIN_SERVICE, '', token) unless token.nil? || token.empty?
+				end
+			else
+				token = tokenPassword.password
+			end
 
 			# GitHub client
 			client = Octokit::Client.new(:access_token => token)
@@ -161,9 +158,9 @@ module GitHubScore
 			output << ['🍻', prs_value]
 
 		    # Refactoring
-			puts("4/6 Fetching code frequency…")
 			code_frequency = nil
 			GitHubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|  
+				puts("4/6 Fetching code frequency…")
 				code_frequency = client.code_frequency_stats(repository)
 			})
 			puts(code_frequency.inspect) if options.verbose
@@ -197,9 +194,9 @@ module GitHubScore
 			output << ['📦', releases_value]
 
 			# Bus factor
-			puts("6/6 Fetching contribution statistics…")
 			contributions = nil 
 			GitHubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|
+				puts("6/6 Fetching contribution statistics…")
 				contributions = client.contributors_stats(repository)
 			})
 			puts(contributions.inspect) if options.verbose
@@ -216,7 +213,7 @@ module GitHubScore
 				bus_factor = (average / meaningful.count * 100.0).round(2)
 			end
 			if bus_factor > 90
-				bus_factor_value = "Bus factor: #{bus_factor}%. Most likely one man show."
+				bus_factor_value = "Bus factor: #{bus_factor}%. Most likely one core contributor."
 			else 
 				bus_factor_value = "Bus factor: #{bus_factor}% (#{meaningful.count} impactful contributors out of #{contributions.count})."
 			end
