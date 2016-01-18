@@ -1,38 +1,43 @@
-# GithubScore
+# GitHubScore
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/github_score`. To experiment with that code, run `bin/console` for an interactive prompt.
+![](https://raw.githubusercontent.com/zats/github_score/README/screenshot.png)
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'github_score'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+More meaningful statistics for GitHub projects than just stars.
 
     $ gem install github_score
 
-## Usage
 
-TODO: Write usage instructions here
+# Report
 
-## Development
+| 🙂 | Description |
+| :--: | :-- |
+| 🍴 | **Forks**. Might mean people planning are fixing bugs or adding features. |
+| 🔭 | **Watchers**. Shows number of people interested in project changes. |
+| 🌟 | **Stars**. Might mean it is a good project or that it was featured in a mailing list. Some people use 🌟 as a "Like". |
+| 🗓 | **Age**. Mature projects might mean battle tested project. Recent pushes might mean project is actively maintained. |
+| 🍻 | **Pull Requests**. Community contributions to the project. Many closed PRs usually is a good sign, while no PRs usual is bad. |
+| 🛠 | **Refactoring**. Balance between added and deleted code. Crude value not including semantic understanding of the code. |
+| 📦 | **Releases**. Might mean disciplined maintainer. Certain dependency managers rely on releases to be present. |
+| 🚌 | **Bus factor**. Chances of the project to become abandoned once current collaborators stop updating it. The higher - the worse. |
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Usage
 
-## Contributing
+You will need to create a GitHub access token. Head over to https://github.com/settings/tokens and create a new one, call the app `GitHub Score` and copy the token.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/github_score.
+To fetch a report for a particular repository
+
+	$ github_score fetch octokit/octokit.rb
+
+First time you call it, it will prompt you to provide the token you just created.
+
+To remove the token
+	
+	$ github_score logout
+
+If you ever forget what each line of the report means, run
+
+	$ github_score about
 
 
 ## License
