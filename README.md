@@ -12,7 +12,7 @@ You will need to create a GitHub access token. Head over to https://github.com/s
 
 To fetch a report for a particular repository
 
-	$ github_bus_factor fetch octokit/octokit.rb
+	$ github_bus_factor octokit/octokit.rb
 
 First time you call it, it will prompt you to provide the token you just created.
 
