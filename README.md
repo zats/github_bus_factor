@@ -1,8 +1,8 @@
 # GitHub Bus Factor
 
-![](https://raw.githubusercontent.com/zats/github_bus_factor/master/README/screenshot.png)
+> More meaningful statistics for GitHub projects than just stars.
 
-More meaningful statistics for GitHub projects than just stars.
+![](https://raw.githubusercontent.com/zats/github_bus_factor/master/README/screenshot.png)
 
     $ gem install github_bus_factor
 
