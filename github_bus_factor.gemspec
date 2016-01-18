@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Is it a good idea to use this GitHub project?"
   spec.description   = "Provides few more parameters to estimate quality of the GitHub project besides stars."
-  spec.homepage      = "https://github.com/zats/GitHubScore"
+  spec.homepage      = "https://github.com/zats/github_bus_factor"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
