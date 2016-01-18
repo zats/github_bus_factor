@@ -44,3 +44,4 @@ If you ever forget what each line of the report means, run
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+![](https://raw.githubusercontent.com/zats/github_bus_factor/master/README/NeoNacho.png)
