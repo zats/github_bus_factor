@@ -13,7 +13,7 @@ include ActionView::Helpers::DateHelper
 
 
 
-module GithubScore
+module GitHubScore
 	KEYCHAIN_SERVICE = 'github_score'
 	API_CALL_RETRY_COUNT = 3
 
@@ -23,7 +23,7 @@ module GithubScore
 	default_command :about
 
 	# There must be a better way to deal with GitHub caching… 
-	def GithubScore.helper(count, block)
+	def GitHubScore.helper(count, block)
 		return unless count > 0
 		return if !block.call(count).nil?
 		puts "Waiting for GitHub cache. Will retry in 3 seconds…"
@@ -163,7 +163,7 @@ module GithubScore
 		    # Refactoring
 			puts("4/6 Fetching code frequency…")
 			code_frequency = nil
-			GithubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|  
+			GitHubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|  
 				code_frequency = client.code_frequency_stats(repository)
 			})
 			puts(code_frequency.inspect) if options.verbose
@@ -199,7 +199,7 @@ module GithubScore
 			# Bus factor
 			puts("6/6 Fetching contribution statistics…")
 			contributions = nil 
-			GithubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|
+			GitHubScore.helper(API_CALL_RETRY_COUNT, lambda { |c|
 				contributions = client.contributors_stats(repository)
 			})
 			puts(contributions.inspect) if options.verbose

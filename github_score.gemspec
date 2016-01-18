@@ -5,13 +5,13 @@ require 'github_score/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "github_score"
-  spec.version       = GithubScore::VERSION
+  spec.version       = GitHubScore::VERSION
   spec.authors       = ["Sash Zats"]
   spec.email         = ["sash@zats.io"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Is it a good idea to use this GitHub project?"
+  spec.description   = "Provides few more parameters to estimate quality of the GitHub project besides stars."
+  spec.homepage      = "https://github.com/zats/GitHubScore"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -30,9 +30,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "octokit", "~> 0.4"
-  spec.add_development_dependency "commander", "~> 4.3.3"
+  spec.add_development_dependency 'commander', '~> 4.3', '>= 4.3.3'
   spec.add_development_dependency "security", "~> 0.1.3"
-  spec.add_development_dependency "terminal-table", "~> 1.5.2"
-  spec.add_development_dependency "faraday-http-cache", "~> 1.2.2"
-  spec.add_development_dependency "activesupport", "~> 4.2.5"
+  spec.add_development_dependency 'terminal-table', '~> 1.5', '>= 1.5.2'
+  spec.add_development_dependency 'faraday-http-cache', '~> 1.2', '>= 1.2.2'
+  spec.add_development_dependency 'activesupport', '~> 4.2', '>= 4.2.5'
 end
