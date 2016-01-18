@@ -168,8 +168,8 @@ module GitHubScore
 		    deletions = 0
 		    additions = 0
 		    refactoring = code_frequency.each { |frequency| 
-		    	additions += frequency[1] # additions
-		    	deletions += frequency[2] # deletions
+		    	additions += frequency[1]
+		    	deletions += frequency[2]
 		    }
 		    refactoring = (Float(deletions.abs) / Float(additions) * 100).round(2)
 		    REFACTORING_THRESHOLD = 5
@@ -223,7 +223,6 @@ module GitHubScore
 			puts("Thank you for you patience 💕\n\n")
 		    table = Terminal::Table.new do |t|
 		    	t.title = "#{ownerName}/#{repoName}"
-		    	# t.headings = ['', 'Value', 'Description']
 				t.style = {:padding_left => 1, :padding_right => 2}
 		    	t.rows = output.each_with_index
 		    end
