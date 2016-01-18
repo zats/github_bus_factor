@@ -1,6 +1,6 @@
 # GitHubScore
 
-![](https://raw.githubusercontent.com/zats/github_score/README/screenshot.png)
+![](https://raw.githubusercontent.com/zats/github_score/master/README/screenshot.png)
 
 More meaningful statistics for GitHub projects than just stars.
 
