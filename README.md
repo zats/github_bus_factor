@@ -1,4 +1,4 @@
-# GitHubScore
+# GitHub Bus Factor
 
 ![](https://raw.githubusercontent.com/zats/github_bus_factor/master/README/screenshot.png)
 

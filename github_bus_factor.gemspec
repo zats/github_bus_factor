@@ -5,7 +5,7 @@ require 'github_bus_factor/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "github_bus_factor"
-  spec.version       = GitHubScore::VERSION
+  spec.version       = GitHubBusFactor::VERSION
   spec.authors       = ["Sash Zats"]
   spec.email         = ["sash@zats.io"]
 
