@@ -191,7 +191,7 @@ command :fetch do |c|
 		if !releases.empty?
 			latest_release = releases.first
 			release_name = latest_release.name.nil? || latest_release.name.empty? ? latest_release.tag_name : latest_release.name
-			releases_value = "#{releases.count} releases; latest release \"#{release_name}\": #{time_ago_in_words(latest_release.published_at)}."
+			releases_value = "#{releases.count} releases; latest release \"#{release_name}\": #{time_ago_in_words(latest_release.published_at)} ago."
 		else
 			releases_value = 'No releases.'
 		end
