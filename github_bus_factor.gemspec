@@ -29,10 +29,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_dependency 'octokit', '~> 4.2'
+  spec.add_dependency 'actionview', '~> 4.2'
+  spec.add_dependency 'activesupport', '~> 4.2'
   spec.add_dependency 'commander', '~> 4.3'
+  spec.add_dependency 'faraday-http-cache', '~> 1.2'
+  spec.add_dependency 'octokit', '~> 4.2'
   spec.add_dependency 'security', '~> 0.1.3'
   spec.add_dependency 'terminal-table', '~> 1.5'
-  spec.add_dependency 'faraday-http-cache', '~> 1.2'
-  spec.add_dependency 'activesupport', '~> 4.2'
 end
