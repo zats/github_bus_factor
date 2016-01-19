@@ -62,11 +62,20 @@ command :fetch do |c|
 	c.option '--verbose', 'Add extra logging'
 	c.action do |args, options|
 		# owner / repo
-		throw "Expect owner/repo as an argument" unless args.count == 1
+		unless args.count == 1
+			log "Usage: github_bus_factor owner/repo"
+			exit
+		end
 		matches = args.first.match(/^(.+)\/(.+)$/)
-		throw "Expect owner/repo as an argument" unless !matches.nil?
+		unless !matches.nil?
+			log "Usage: github_bus_factor owner/repo"
+			exit
+		end
 		ownerName, repoName = matches.captures
-		throw "Expect owner/repo as an argument" if ownerName.nil? || ownerName.empty? || repoName.nil? || repoName.empty?
+		if ownerName.nil? || ownerName.empty? || repoName.nil? || repoName.empty?
+			log "Usage: github_bus_factor owner/repo"
+			exit
+		end
 
 		# Token
 		tokenPassword = Security::GenericPassword.find(service: KEYCHAIN_SERVICE)
