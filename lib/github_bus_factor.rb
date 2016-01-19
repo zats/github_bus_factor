@@ -16,7 +16,7 @@ module GitHubBusFactor
 	API_CALL_RETRY_COUNT = 3
 
 
-	program :version, '0.0.1'
+	program :version, '0.1.4'
 	program :description, 'More than just stars'
 	default_command :fetch
 
