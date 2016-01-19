@@ -1,4 +1,4 @@
-require "github_bus_factor/version"
+require 'github_bus_factor/version'
 require 'rubygems'
 require 'commander/import'
 require 'octokit'
@@ -8,7 +8,6 @@ require 'faraday-http-cache'
 require 'action_view'
 require 'active_support/core_ext/numeric/time'
 include ActionView::Helpers::DateHelper
-
 
 
 module GitHubBusFactor
