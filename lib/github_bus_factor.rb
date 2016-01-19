@@ -1,6 +1,4 @@
 require "github_bus_factor/version"
-#!/usr/bin/env ruby
-
 require 'rubygems'
 require 'commander/import'
 require 'octokit'
